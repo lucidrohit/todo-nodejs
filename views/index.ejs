@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/112a599fe6.js" crossorigin="anonymous"></script>
+    <title>Todo List</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Todo</h1>
+        <div style="overflow: scroll; height:57vh ;">
+
+            <% for(i in list){ %>
+            <form action="/delete/<%=i%>" method="post">
+                <div class="containers inputed">
+                    <h2><%=list[i]%></h2>
+                    <input type="text" name="id"  value="<%=i%>" style="display:none">
+                    <button class="far fa-trash-alt"  ></button>
+                </div>
+            </form>
+            <%}%>
+            
+        </div>
+
+        <div class="containers">
+            <form action="/" method="post">
+                <input name="name" type="text" placeholder="Cooking...">
+                <button type="submit" class="fas fa-check"></button>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
